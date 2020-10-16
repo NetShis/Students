@@ -11,13 +11,10 @@ public class Main {
         Student denis = new Student("Denis", "Zaboev", 32, ivan);
         Student artem = new Student("Artem", "Turov", 30, oleg);
 
-        for (int i = 0; i < tasks.length; ) {
+        for (int i = 0; i < tasks.length; i += 3) {
             tasks[i] = new Test(i);
-            i++;
-            tasks[i] = new DragAndDrop(i);
-            i++;
-            tasks[i] = new Code(i);
-            i++;
+            tasks[i + 1] = new DragAndDrop(i);
+            tasks[i + 2] = new Code(i);
         }
 
         while (!denis.isPassedAllTask() || !artem.isPassedAllTask()) {
